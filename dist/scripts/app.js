@@ -3,14 +3,14 @@
         $locationProvider
         .html5Mode({
             enabled: true,
-            requireBase: fasle
+            requireBase: false
         });
         
         $stateProvider
         .state('landing', {
             url:'/',
-            //controller: "",
-            templateUrl: ""
+            controller: 'RoomCtrl as rooms',
+            templateUrl: '/templates/home.html'
         });
     }
     
