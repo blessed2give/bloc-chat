@@ -5,8 +5,10 @@
         <title>Bloc Chat</title>
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300">
         <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/styles/style.css">
-        
+        <link rel="stylesheet" type="text/css" href="/styles/modal.css">
+        <!-- Angular -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
         <!-- Firebase -->
@@ -24,16 +26,16 @@
           };
           firebase.initializeApp(config);
         </script>
+        <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.4.0.js"></script>
         <script src="/scripts/app.js"></script>
         <script src="/scripts/services/Room.js"></script>
         <script src="/scripts/controllers/RoomCtrl.js"></script>
+        <script src="/scripts/controllers/ModalCtrl.js"></script>
     </head>
     
     <body ng-app="blocChat">
         
         <ui-view></ui-view>
-        
-        <!-- Angular -->
         
     </body>
 </html>
