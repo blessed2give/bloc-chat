@@ -1,6 +1,21 @@
 <section class="sidebar">
     <h1 class='heading'>Bloc Chat</h1>
+    <button class="btn btn-primary" ng-click="rooms.newRoom()">New Room</button>
+    <!--
+    <table class="chat-room-list">
+        <tr class="chat-room" ng-repeat="room in rooms.chatRooms">
+            <td>{{ room.name }}</td>
+        </tr>
+    </table>
+    -->
+    <!--
+    <ol class="chat-room-list">
+        <li class="chat-room" ng-repeat="room in rooms.chatRooms">{{ room.name }}</li>
+    </ol>
+    -->
+    
     <div class="chat-room-list">
-        <div class="chat-room" ng-repeat="room in rooms.chatRooms">{{ room }}</div>
+        <div class="chat-room" ng-repeat="room in rooms.chatRooms">{{ room.name }}</div>
     </div>
+    
 </section>

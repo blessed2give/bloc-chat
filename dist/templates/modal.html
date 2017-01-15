@@ -1,18 +1,15 @@
-<div class="modal-content">
-    <div class="modal-header">
-        <h3 class="modal-title">Create new room</h3>
-    </div>
-    <div class="modal-body">
-        <p>modal body</p>
-        <!--<form role="form">
-            <div class="form-group">
-                <input type="email" class="form-control" placeholder="Email">
-            </div>
-        </form>-->
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-    </div>
+<div class="modal-header">
+    <h3>Create new room</h3>
 </div>
-
-<button class="btn btn-primary" ng-click="$modal.open()">New Room</button>
+<div class="modal-body">
+    <form>
+        Enter a room name:<br>
+        <input type="text" name="newroom" ng-model="modal.roomname">
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="modal.cancel()">
+        Cancel
+    </button>
+    <button class="btn btn-primary" ng-click="modal.createNewRoom()">Submit</button>
+</div>
