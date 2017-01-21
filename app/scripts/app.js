@@ -10,7 +10,7 @@
         .state('landing', {
             url:'/',
             controller: 'RoomCtrl as rooms',
-            templateUrl: '/templates/home.html',
+            templateUrl: '/room/{id}',
         });
     }
     
