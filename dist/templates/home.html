@@ -1,19 +1,9 @@
-<section class="sidebar">
-    <h1 class='heading'>Bloc Chat</h1>
-    <button class="btn btn-primary" ng-click="rooms.newRoom()">New Room</button>
-    
-    <div class="chat-room-list">
-        <div class="chat-room" ng-repeat="room in rooms.chatRooms">
-            <a href="#" ng-click="activeRoomName = room.name">{{ room.name }}</a></div>
-    </div>    
-</section>
-
 <section class="container active-chat-room">
     <table class="active-chat-room-content">
         <tr class="room-title">
-            <th>{{ activeRoomName }}</th>
+            <th>{{ rooms.currentRoom.$value }}</th>
         </tr>
-        <tr class="messages" ng-repeat="message in messagesByRoom">
+        <tr class="messages" ng-repeat="message in rooms.messagesByRoom">
             <td>{{ message.content }}</td>
         </tr>
     </table>

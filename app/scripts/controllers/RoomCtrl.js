@@ -1,23 +1,16 @@
 (function() {
-    function RoomCtrl(Room, $uibModal, Message) {
-        this.chatRooms = Room.all;
-        this.activeRoomName = null;
-        this.messagesByRoom = Message.getByRoomId($stateParams.id); //$stateParams.id
+    function RoomCtrl(Room, Message, $stateParams) {
+        this.messagesByRoom = Message.getByRoomId($stateParams.id);
+        var that = this;
+        Room.getRoomName($stateParams.id)
+            .$loaded()
+            .then(function(data) {
+                that.currentRoom = data[0];
+            });
         
-        this.newRoom = function () {
-            var modalInstance = $uibModal.open({
-                templateUrl: '/templates/modal.html',
-                controller: 'ModalCtrl as modal',
-                size: 'sm'
-            });
-            
-            modalInstance.result.then(function(roomname) {
-                Room.addRoom(roomname);
-            });
-        };
     }
     
     angular
         .module('blocChat')
-        .controller('RoomCtrl', ['Room', '$uibModal', 'Message', RoomCtrl]);
+        .controller('RoomCtrl', ['Room', 'Message', '$stateParams', RoomCtrl]);
 })();

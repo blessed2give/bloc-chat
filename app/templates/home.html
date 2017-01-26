@@ -1,9 +1,9 @@
 <section class="container active-chat-room">
     <table class="active-chat-room-content">
         <tr class="room-title">
-            <th>{{ activeRoomName }}</th>
+            <th>{{ rooms.currentRoom.$value }}</th>
         </tr>
-        <tr class="messages" ng-repeat="message in messagesByRoom">
+        <tr class="messages" ng-repeat="message in rooms.messagesByRoom">
             <td>{{ message.content }}</td>
         </tr>
     </table>

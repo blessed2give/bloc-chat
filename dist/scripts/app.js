@@ -9,8 +9,12 @@
         $stateProvider
         .state('landing', {
             url:'/',
+            template: '<div/>'
+        })
+        .state('activeRoom', {
+            url: 'room/{id}',
             controller: 'RoomCtrl as rooms',
-            templateUrl: '/templates/home.html',
+            templateUrl: '/templates/home.html'
         });
     }
     
