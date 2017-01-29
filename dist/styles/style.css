@@ -57,3 +57,16 @@ td {
     width: 100%;
 }
 
+.send-btn {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.msg-content {
+    position: fixed;
+    bottom: 0;
+    left: 25%;
+    border: solid grey;
+    width: 80%;
+}
