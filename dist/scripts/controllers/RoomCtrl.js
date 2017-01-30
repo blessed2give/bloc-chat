@@ -2,19 +2,27 @@
     function RoomCtrl(Room, Message, $stateParams, $cookies) {
         this.messagesByRoom = Message.getByRoomId($stateParams.id);
         var that = this;
-        Room.getRoomName($stateParams.id)
-            .$loaded()
-            .then(function(data) {
-                that.currentRoom = data[0];
-            });
-        this.messageObj = {
-            roomId: $stateParams.id,
-            content: this.msgContent,
-            sendAt: '5:50 pm',
-            username: $cookies.get('username')
+        this.loadMessages = function() {
+            Room.getRoomName($stateParams.id)
+                .$loaded()
+                .then(function(data) {
+                    that.currentRoom = data[0];
+                });   
         };
-        
-        this.send = Message.send(this.messageObj);
+        this.send = function send() {
+            var messageObj = {
+                roomId: $stateParams.id,
+                content: that.msgContent,
+                sendAt: '5:50 pm',
+                username: $cookies.get('username')
+            }
+            Message.send(messageObj)
+                .then(function() {
+                that.msgContent = '';
+                that.loadMessages();
+            });
+        };
+        this.loadMessages();
     }
     
     angular

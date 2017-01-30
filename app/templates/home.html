@@ -4,15 +4,18 @@
             <th>{{ rooms.currentRoom.$value }}</th>
         </tr>
         <tr class="messages" ng-repeat="message in rooms.messagesByRoom">
-            <td class="username">{{ message.username; }}</td>
-            <td class="message-content">{{ message.content; }}</td>
+            <!--<td class="username">{{ message.username; }}</td>-->
+            <td class="message-content">
+                {{ message.username; }} <br>
+                {{ message.content; }}
+            </td>
             <td class="send-time">{{ message.sendAt; }}</td>
         </tr>
     </table>
     
     <div class="container message-to-send">
-        <input class="msg-content" type="text" name="message-content" ng-model="msgContent">
+        <input class="msg-content" type="text" name="message-content" ng-model="rooms.msgContent">
 
-        <button class="send-btn" ng-click="rooms.send()">Send</button>
+        <button type="button" class="send-btn" ng-click="rooms.send()">Send</button>
     </div>
 </section>

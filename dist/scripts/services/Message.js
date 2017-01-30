@@ -10,7 +10,7 @@
         return $firebaseArray(filteredMsgsRef);
       },
         send: function (newMessage) {
-            messages.$add({
+            return messages.$add({
                 content: newMessage.content,
                 roomId: newMessage.roomId,
                 sendAt: newMessage.sendAt,

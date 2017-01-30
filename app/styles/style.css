@@ -37,13 +37,30 @@
     font-family: 'Autour One';
 }
 
-th {
-    height: 50px;
-    width: 100%;
+.active-chat-room-content {
+    width: 70%;
 }
 
 td {
+    margin: 5%;
+    height: 30px;
+}
+
+th {
     height: 50px;
+}
+
+.messages {
+    height: 30px;
+}
+
+.message-content {
+    width: 90%;
+    margin: 5%
+}
+
+.send-time {
+    width: 10%;
 }
 
 .active-chat-room-content {
@@ -57,6 +74,10 @@ td {
     width: 100%;
 }
 
+.message-to-send {
+    width: 100%;
+    
+}
 .send-btn {
     position: fixed;
     right: 0;
@@ -67,6 +88,6 @@ td {
     position: fixed;
     bottom: 0;
     left: 25%;
-    border: solid grey;
+    border: solid blue;
     width: 80%;
 }
